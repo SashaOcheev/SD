@@ -1,0 +1,6 @@
+triangle 0 0 3 0 0 4
+rectangle 100 100 200 200
+circle 10 10 3
+triangle 0 0 1 1 2 2
+rectangle 100 100 200 100
+circle 10 10 10
