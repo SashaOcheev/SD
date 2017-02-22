@@ -3,6 +3,7 @@
 
 
 CRectangle::CRectangle(double a, double b)
+	: AbstractShape("rectangle")
 {
 	if (a <= 0 || b <= 0)
 	{

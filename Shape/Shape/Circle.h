@@ -2,7 +2,7 @@
 #include "IShape.h"
 
 class CCircle :
-	public IShape
+	public AbstractShape
 {
 public:
 	CCircle(double radius);

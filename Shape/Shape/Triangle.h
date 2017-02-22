@@ -1,7 +1,7 @@
 #pragma once
 #include "IShape.h"
 class CTriangle :
-	public IShape
+	public AbstractShape
 {
 public:
 	CTriangle(double a, double b, double c);

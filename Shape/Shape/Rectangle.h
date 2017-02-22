@@ -1,7 +1,7 @@
 #pragma once
 #include "IShape.h"
 class CRectangle :
-	public IShape
+	public AbstractShape
 {
 public:
 	CRectangle(double a, double b);

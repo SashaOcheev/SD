@@ -3,6 +3,7 @@
 #include <fstream>
 
 CCircle::CCircle(double radius)
+	: AbstractShape("circle")
 {
 	if (radius <= 0)
 	{

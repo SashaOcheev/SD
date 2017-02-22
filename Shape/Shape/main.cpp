@@ -11,14 +11,14 @@
 
 using namespace std;
 
-void PrintFigure(ostream &outsream, const IShape &shape, const string &figureName)
+void PrintFigure(ostream &outsream, const shared_ptr<AbstractShape> &shape)
 {
-	outsream << figureName << " ";
-	outsream << "area = " << shape.GetArea() << " ";
-	outsream << "perimeter = " << shape.GetPerimeter() << endl;
+	outsream << shape->GetName() << " ";
+	outsream << "area = " << shape->GetArea() << " ";
+	outsream << "perimeter = " << shape->GetPerimeter() << endl;
 }
 
-void HandleFigureStream(istream &instream, ostream &outstream)
+shared_ptr<AbstractShape> GetFigure(istream &instream)
 {
 	string figure;
 	instream >> figure;
@@ -26,31 +26,39 @@ void HandleFigureStream(istream &instream, ostream &outstream)
 	if (figure == "triangle")
 	{
 		instream >> a >> b >> c >> d >> e >> f;
-		PrintFigure(outstream, CreateTriangle({ a, b }, { c, d }, { e, f }), figure);
+		return make_shared<CTriangle>(CreateTriangle({ a, b }, { c, d }, { e, f }));
 	}
 	else if (figure == "rectangle")
 	{
 		instream >> a >> b >> c >> d;
-		PrintFigure(outstream, CreateRectangle({ a, b }, { c, d }), figure);
+		return make_shared<CRectangle>(CreateRectangle({ a, b }, { c, d }));
 	}
 	else if (figure == "circle")
 	{
 		instream >> a >> b >> c;
-		PrintFigure(outstream, CreateCircle({ a, b }, c), figure);
+		return make_shared<CCircle>(CreateCircle({ a, b }, c));
+	}
+	else
+	{
+		shared_ptr<CTriangle>(nullptr);
 	}
 }
 
-void RunShapeStream(istream &instream, ostream &outsream)
+void RunShapeStream(istream &instream, ostream &outstream)
 {
 	while (instream)
 	{
 		try
 		{
-			HandleFigureStream(instream, outsream);
+			auto figure = GetFigure(instream);
+			if (figure)
+			{
+				PrintFigure(outstream, figure);
+			}
 		}
 		catch (const std::domain_error &ex)
 		{
-			outsream << ex.what() << endl;
+			outstream << ex.what() << endl;
 		}
 	}
 }

@@ -5,6 +5,7 @@
 
 
 CTriangle::CTriangle(double a, double b, double c)
+	: AbstractShape("triangle")
 {
 	if (a <= 0 || b <= 0 || c <= 0)
 	{
