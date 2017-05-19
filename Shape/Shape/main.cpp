@@ -38,10 +38,6 @@ shared_ptr<AbstractShape> GetFigure(istream &instream)
 		instream >> a >> b >> c;
 		return make_shared<CCircle>(CreateCircle({ a, b }, c));
 	}
-	else
-	{
-		shared_ptr<CTriangle>(nullptr);
-	}
 }
 
 void RunShapeStream(istream &instream, ostream &outstream)
@@ -64,10 +60,10 @@ void RunShapeStream(istream &instream, ostream &outstream)
 }
 
 
-int main()
+int main(int argc, char *argv[])
 {
-	std::ifstream inputFile("input.txt");
-	std::ofstream outputFile("output.txt");
+	std::ifstream inputFile(argv[1]);
+	std::ofstream outputFile(argv[2]);
 
 	RunShapeStream(inputFile, outputFile);
 
