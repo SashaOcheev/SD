@@ -57,6 +57,9 @@
     <ClInclude Include="TriangleFactorySingleton.h">
       <Filter>Header Files\ShapeFactory</Filter>
     </ClInclude>
+    <ClInclude Include="ShapeSimpleFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -85,6 +88,9 @@
     </ClCompile>
     <ClCompile Include="AbstractShape.cpp">
       <Filter>Source Files\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeSimpleFactory.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
