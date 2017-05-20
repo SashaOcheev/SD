@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Shape">
       <UniqueIdentifier>{0afabf1e-0830-4c9b-9d0a-83dd11520d7b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ShapeFactory">
+      <UniqueIdentifier>{e1cb0128-77ce-450a-81cd-002047756741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ShapeFactory">
+      <UniqueIdentifier>{8bc6b84a-1cce-421b-a9f7-e7eca4b202b0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -33,14 +39,23 @@
     <ClInclude Include="Circle.h">
       <Filter>Header Files\Shape</Filter>
     </ClInclude>
-    <ClInclude Include="IShape.h">
-      <Filter>Header Files\Shape</Filter>
-    </ClInclude>
     <ClInclude Include="Rectangle.h">
       <Filter>Header Files\Shape</Filter>
     </ClInclude>
     <ClInclude Include="Triangle.h">
       <Filter>Header Files\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleFactorySingleton.h">
+      <Filter>Header Files\ShapeFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="RectangleFactorySingleton.h">
+      <Filter>Header Files\ShapeFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractShape.h">
+      <Filter>Header Files\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="TriangleFactorySingleton.h">
+      <Filter>Header Files\ShapeFactory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -53,13 +68,22 @@
     <ClCompile Include="Circle.cpp">
       <Filter>Source Files\Shape</Filter>
     </ClCompile>
-    <ClCompile Include="IShape.cpp">
-      <Filter>Source Files\Shape</Filter>
-    </ClCompile>
     <ClCompile Include="Rectangle.cpp">
       <Filter>Source Files\Shape</Filter>
     </ClCompile>
     <ClCompile Include="Triangle.cpp">
+      <Filter>Source Files\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="TriangleFactorySongleton.cpp">
+      <Filter>Source Files\ShapeFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleFactorySingleton.cpp">
+      <Filter>Source Files\ShapeFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="RectangleFactorySingleton.cpp">
+      <Filter>Source Files\ShapeFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractShape.cpp">
       <Filter>Source Files\Shape</Filter>
     </ClCompile>
   </ItemGroup>

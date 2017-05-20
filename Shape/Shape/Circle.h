@@ -1,5 +1,5 @@
 #pragma once
-#include "IShape.h"
+#include "AbstractShape.h"
 
 class CCircle :
 	public AbstractShape

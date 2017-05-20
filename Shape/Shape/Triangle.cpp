@@ -1,9 +1,6 @@
 #include "stdafx.h"
 #include "Triangle.h"
 
-
-
-
 CTriangle::CTriangle(double a, double b, double c)
 	: AbstractShape("triangle")
 {

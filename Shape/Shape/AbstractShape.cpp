@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "IShape.h"
+#include "AbstractShape.h"
 
 AbstractShape::AbstractShape(const std::string & name)
 {
