@@ -148,6 +148,8 @@
     <ClInclude Include="CircleFactorySingleton.h" />
     <ClInclude Include="AbstractShape.h" />
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="FileHandler.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="RectangleFactorySingleton.h" />
     <ClInclude Include="ShapeSimpleFactory.h" />
@@ -160,6 +162,7 @@
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CircleFactorySingleton.cpp" />
     <ClCompile Include="AbstractShape.cpp" />
+    <ClCompile Include="FileHandler.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RectangleFactorySingleton.cpp" />
@@ -171,7 +174,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Triangle.cpp" />
-    <ClCompile Include="TriangleFactorySongleton.cpp" />
+    <ClCompile Include="TriangleFactorySingleton.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -30,7 +30,7 @@ void CTriangle::CanConstruct(double a, double b, double c)
 {
 	if (a + b <= c || a + c <= b || b + c <= a)
 	{
-		throw std::invalid_argument("The sum of two sides of the triangle must be greater than a third side");
+		throw std::domain_error("The sum of two sides of the triangle must be greater than a third side");
 	}
 }
 

@@ -3,29 +3,33 @@
 #include "CircleFactorySingleton.h"
 #include "RectangleFactorySingleton.h"
 #include "TriangleFactorySingleton.h"
-#include <stdarg.h> 
 
-std::unique_ptr<AbstractShape> ShapeSimpleFactory::CreateShape(ShapeType type, double n_args ...)
+std::unique_ptr<AbstractShape> ShapeSimpleFactory::CreateShape(ShapeType type, std::vector<double> params)
 {
-    va_list params;
-    va_start(params, n_args);
-    if (type == ShapeType::CIRCLE)
+    double radius0, radius1, a0, a1, b0, b1, c0, c1;
+
+    if (type == ShapeType::CIRCLE && params.size() == 2)
     {
-        double radius = va_arg(params, double);
-        return CircleFactorySingleton::GetInstance().CreateShape(radius);
+        radius0 = params[0];
+        radius1 = params[1];
+        return CircleFactorySingleton::GetInstance().CreateShape(radius1 - radius0);
     }
-    else if (type == ShapeType::RECTANGLE)
+    if (type == ShapeType::RECTANGLE && params.size() == 4)
     {
-        double a = va_arg(params, double);
-        double b = va_arg(params, double);
-        return RectangleFactorySingleton::GetInstance().CreateShape(a, b);
+        a0 = params[0];
+        a1 = params[1];
+        b0 = params[2];
+        b1 = params[3];
+        return RectangleFactorySingleton::GetInstance().CreateShape(a1 - a0, b1 - b0);
     }
-    else if (type == ShapeType::TRIANGLE)
+    if (type == ShapeType::TRIANGLE && params.size() == 6)
     {
-        double a = va_arg(params, double);
-        double b = va_arg(params, double);
-        double c = va_arg(params, double);
-        return TriangleFactorySingleton::GetInstance().CreateShape(a, b, c);
+        a0 = params[0];
+        a1 = params[1];
+        b0 = params[2];
+        b1 = params[3];
+        c0 = params[4];
+        c1 = params[5];
+        return TriangleFactorySingleton::GetInstance().CreateShape(a1 - a0, b1 - b0, c1 - c0);
     }
-    va_end(params);
 }

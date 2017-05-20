@@ -58,6 +58,12 @@
       <Filter>Header Files\ShapeFactory</Filter>
     </ClInclude>
     <ClInclude Include="ShapeSimpleFactory.h">
+      <Filter>Header Files\ShapeFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="FileHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -77,9 +83,6 @@
     <ClCompile Include="Triangle.cpp">
       <Filter>Source Files\Shape</Filter>
     </ClCompile>
-    <ClCompile Include="TriangleFactorySongleton.cpp">
-      <Filter>Source Files\ShapeFactory</Filter>
-    </ClCompile>
     <ClCompile Include="CircleFactorySingleton.cpp">
       <Filter>Source Files\ShapeFactory</Filter>
     </ClCompile>
@@ -90,7 +93,13 @@
       <Filter>Source Files\Shape</Filter>
     </ClCompile>
     <ClCompile Include="ShapeSimpleFactory.cpp">
+      <Filter>Source Files\ShapeFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="FileHandler.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TriangleFactorySingleton.cpp">
+      <Filter>Source Files\ShapeFactory</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

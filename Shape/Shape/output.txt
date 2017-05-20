@@ -1,6 +1,0 @@
-triangle area = 6 perimeter = 12
-rectangle area = 10000 perimeter = 400
-circle area = 28.2743 perimeter = 18.8496
-triangle area = 0 perimeter = 5.65685
-Rectangle's sides must be a positive numbers
-circle area = 314.159 perimeter = 62.8319
