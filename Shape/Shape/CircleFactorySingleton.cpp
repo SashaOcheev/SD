@@ -2,7 +2,7 @@
 #include "CircleFactorySingleton.h"
 #include "Circle.h"
 
-std::unique_ptr<AbstractShape> CircleFactorySingleton::CreateShape(double radius)
+std::unique_ptr<AbstractShape> CircleFactorySingleton::CreateShape(BigInt radius)
 {
     return std::make_unique<CCircle>(radius);
 }

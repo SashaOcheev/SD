@@ -18,5 +18,5 @@ private:
     std::ofstream output;
 
     void PrintFigure(std::unique_ptr<AbstractShape> &shape);
-    std::vector<double> ReadDoubles(const std::string &str);
+    std::vector<BigInt> ReadBigInts(const std::string &str);
 };

@@ -1,0 +1,3 @@
+Triangle's sides must be a positive numbers
+RECTANGLE P=400 S=10000
+CIRCLE P=300 S=7500

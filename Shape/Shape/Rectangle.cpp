@@ -2,8 +2,8 @@
 #include "Rectangle.h"
 
 
-CRectangle::CRectangle(double a, double b)
-	: AbstractShape("rectangle")
+CRectangle::CRectangle(BigInt a, BigInt b)
+	: AbstractShape("RECTANGLE")
 {
 	if (a <= 0 || b <= 0)
 	{
@@ -13,17 +13,13 @@ CRectangle::CRectangle(double a, double b)
 	m_b = b;
 }
 
-double CRectangle::GetArea() const
+BigInt CRectangle::GetArea() const
 {
 	return m_a * m_b;
 }
 
-double CRectangle::GetPerimeter() const
+BigInt CRectangle::GetPerimeter() const
 {
-	return 2 * (m_a + m_b);
+	return (m_a + m_b) * 2;
 }
 
-CRectangle CreateRectangle(const std::pair<double, double>& leftTop, const std::pair<double, double> &rightBottom)
-{
-	return CRectangle(rightBottom.first - leftTop.first, rightBottom.second - leftTop.second);
-}

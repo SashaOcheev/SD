@@ -5,7 +5,7 @@
 class RectangleFactorySingleton
 {
 public:
-    std::unique_ptr<AbstractShape> CreateShape(double a, double b);
+    std::unique_ptr<AbstractShape> CreateShape(BigInt a, BigInt b);
 
     static RectangleFactorySingleton &GetInstance();
 private:

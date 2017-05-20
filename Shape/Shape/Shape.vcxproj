@@ -145,11 +145,11 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BigInt.h" />
     <ClInclude Include="CircleFactorySingleton.h" />
     <ClInclude Include="AbstractShape.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="FileHandler.h" />
-    <ClInclude Include="Point.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="RectangleFactorySingleton.h" />
     <ClInclude Include="ShapeSimpleFactory.h" />
@@ -159,6 +159,7 @@
     <ClInclude Include="TriangleFactorySingleton.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BigInt.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CircleFactorySingleton.cpp" />
     <ClCompile Include="AbstractShape.cpp" />

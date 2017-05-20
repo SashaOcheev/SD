@@ -27,12 +27,13 @@ void FileHandler::Run()
         std::string stringType;
         stringStream >> stringType;
         stringType = std::string(stringType.begin(), stringType.end() - 1);
-        auto doubles = ReadDoubles(line);
+        auto BigInts = ReadBigInts(line);
         if (stringType == "CIRCLE")
         {
             try
             {
-                auto shape = ShapeSimpleFactory::CreateShape(ShapeType::CIRCLE, doubles);
+                BigInts = { BigInts[2] };
+                auto shape = ShapeSimpleFactory::CreateShape(ShapeType::CIRCLE, BigInts);
                 PrintFigure(shape);
             }
             catch (std::domain_error &er)
@@ -42,10 +43,10 @@ void FileHandler::Run()
         }
         else if (stringType == "RECTANGLE")
         {
-            doubles = { doubles[1], doubles[2], doubles[4] , doubles[5] };
+            BigInts = { BigInts[1], BigInts[2], BigInts[4] , BigInts[5] };
             try
             {
-                auto shape = ShapeSimpleFactory::CreateShape(ShapeType::RECTANGLE, doubles);
+                auto shape = ShapeSimpleFactory::CreateShape(ShapeType::RECTANGLE, BigInts);
                 PrintFigure(shape);
             }
             catch (std::domain_error &er)
@@ -55,10 +56,10 @@ void FileHandler::Run()
         }
         else if (stringType == "TRIANGLE")
         {
-            doubles = { doubles[1], doubles[2], doubles[4] , doubles[5], doubles[7] , doubles[8] };
+            BigInts = { BigInts[1], BigInts[2], BigInts[4] , BigInts[5], BigInts[7] , BigInts[8] };
             try
             {
-                auto shape = ShapeSimpleFactory::CreateShape(ShapeType::TRIANGLE, doubles);
+                auto shape = ShapeSimpleFactory::CreateShape(ShapeType::TRIANGLE, BigInts);
                 PrintFigure(shape);
             }
             catch (std::domain_error &er)
@@ -74,9 +75,9 @@ void FileHandler::PrintFigure(std::unique_ptr<AbstractShape>& shape)
     output << shape->GetName() << " P=" << shape->GetPerimeter() << " S=" << shape->GetArea() << std::endl;
 }
 
-std::vector<double> FileHandler::ReadDoubles(const std::string &str)
+std::vector<BigInt> FileHandler::ReadBigInts(const std::string &str)
 {
-    std::vector<double> doubles;
+    std::vector<BigInt> BigInts;
     auto start = str.begin();
     while (start != str.end())
     {
@@ -87,10 +88,10 @@ std::vector<double> FileHandler::ReadDoubles(const std::string &str)
         }
         auto end = std::find_if(start, str.end(), [](char ch) { return ch < '0' || ch > '9'; });
         std::string currentString(start, end);
-        doubles.push_back(std::strtod(currentString.c_str(), nullptr));
+        BigInts.push_back(std::strtod(currentString.c_str(), nullptr));
         start = end;
     }
 
-    return doubles;
+    return BigInts;
 }
 

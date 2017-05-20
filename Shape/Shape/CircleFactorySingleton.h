@@ -5,7 +5,7 @@
 class CircleFactorySingleton
 {
 public:
-    std::unique_ptr<AbstractShape> CreateShape(double radius);
+    std::unique_ptr<AbstractShape> CreateShape(BigInt radius);
 
     static CircleFactorySingleton &GetInstance();
 private:

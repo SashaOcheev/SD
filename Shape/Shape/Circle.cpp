@@ -2,8 +2,8 @@
 #include "Circle.h"
 #include <fstream>
 
-CCircle::CCircle(double radius)
-	: AbstractShape("circle")
+CCircle::CCircle(BigInt radius)
+	: AbstractShape("CIRCLE")
 {
 	if (radius <= 0)
 	{
@@ -13,17 +13,13 @@ CCircle::CCircle(double radius)
 	m_radius = radius;
 }
 
-double CCircle::GetArea() const
+BigInt CCircle::GetArea() const
 {
-	return M_PI * pow(m_radius, 2);
+	return m_radius * m_radius * M_PI;
 }
 
-double CCircle::GetPerimeter() const
+BigInt CCircle::GetPerimeter() const
 {
-	return 2 * M_PI * m_radius;
+	return m_radius * 2 * M_PI;
 }
 
-CCircle CreateCircle(const std::pair<double, double> &centerPosition, const double radius)
-{
-	return CCircle(radius);
-}

@@ -5,7 +5,7 @@
 class TriangleFactorySingleton
 {
 public:
-    std::unique_ptr<AbstractShape> CreateShape(double a, double b, double c);
+    std::unique_ptr<AbstractShape> CreateShape(BigInt a, BigInt b, BigInt c);
 
     static TriangleFactorySingleton &GetInstance();
 private:

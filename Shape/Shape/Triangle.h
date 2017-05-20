@@ -4,23 +4,18 @@ class CTriangle :
 	public AbstractShape
 {
 public:
-	CTriangle(double a, double b, double c);
+	CTriangle(BigInt a, BigInt b, BigInt c);
 
-	double GetArea() const override;
-	double GetPerimeter() const override;
+	BigInt GetArea() const override;
+	BigInt GetPerimeter() const override;
 
 	~CTriangle() override = default;
 
 private:
-	void CanConstruct(double a, double b, double c);
+	void CanConstruct(BigInt a, BigInt b, BigInt c);
 
-	double m_a;
-	double m_b;
-	double m_c;
+	BigInt m_a;
+    BigInt m_b;
+    BigInt m_c;
 };
 
-
-double CalculateVectorLength(const std::pair<double, double> &A, const std::pair<double, double> &B);
-
-
-CTriangle CreateTriangle(const std::pair<double, double> &A, const std::pair<double, double> &B, const std::pair<double, double> &C);
