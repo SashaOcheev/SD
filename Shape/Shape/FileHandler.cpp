@@ -8,10 +8,11 @@
 #include <stdarg.h>
 #include <stdexcept>
 
-FileHandler::FileHandler(std::ifstream & inputFile, std::ofstream & outputFile)
+FileHandler::FileHandler(std::ifstream & inputFile, std::ofstream & outputFile, IVisitor *toStringVisitor)
 {
     input = std::move(inputFile);
     output = std::move(outputFile);
+    toStringConverter = toStringVisitor;
 }
 
 FileHandler::~FileHandler()
@@ -72,7 +73,7 @@ void FileHandler::Run()
 
 void FileHandler::PrintFigure(std::unique_ptr<AbstractShape>& shape)
 {
-    output << shape->GetName() << " P=" << shape->GetPerimeter() << " S=" << shape->GetArea() << std::endl;
+    output << shape->Accept(*toStringConverter) << std::endl;
 }
 
 std::vector<BigInt> FileHandler::ReadBigInts(const std::string &str)
@@ -88,7 +89,7 @@ std::vector<BigInt> FileHandler::ReadBigInts(const std::string &str)
         }
         auto end = std::find_if(start, str.end(), [](char ch) { return ch < '0' || ch > '9'; });
         std::string currentString(start, end);
-        BigInts.push_back(std::strtod(currentString.c_str(), nullptr));
+        BigInts.push_back(std::strtol(currentString.c_str(), nullptr, 10));
         start = end;
     }
 

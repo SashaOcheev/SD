@@ -3,7 +3,6 @@
 #include <fstream>
 
 CCircle::CCircle(BigInt radius)
-	: AbstractShape("CIRCLE")
 {
 	if (radius <= 0)
 	{
@@ -11,6 +10,11 @@ CCircle::CCircle(BigInt radius)
 	}
 
 	m_radius = radius;
+}
+
+std::string CCircle::Accept(IVisitor & visitor)
+{
+    return visitor.Visit(*this);
 }
 
 BigInt CCircle::GetArea() const

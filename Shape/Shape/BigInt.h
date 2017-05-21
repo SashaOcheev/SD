@@ -2,6 +2,7 @@
 #include <vector>
 #include <iostream>
 #include <stdexcept>
+#include <string>
 
 typedef short digit;
 
@@ -37,7 +38,7 @@ public:
 	bool operator>(const BigInt &number) const;
 	bool operator>=(const BigInt &number) const;
 
-	friend std::ostream &operator<<(std::ostream &os, BigInt &n);
+    std::string ToString() const;
 
 private:
     std::vector<digit>::const_iterator begin() const;

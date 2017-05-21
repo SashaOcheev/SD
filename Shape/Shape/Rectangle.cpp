@@ -3,7 +3,6 @@
 
 
 CRectangle::CRectangle(BigInt a, BigInt b)
-	: AbstractShape("RECTANGLE")
 {
 	if (a <= 0 || b <= 0)
 	{
@@ -11,6 +10,11 @@ CRectangle::CRectangle(BigInt a, BigInt b)
 	}
 	m_a = a;
 	m_b = b;
+}
+
+std::string CRectangle::Accept(IVisitor & visitor)
+{
+    return visitor.Visit(*this);
 }
 
 BigInt CRectangle::GetArea() const

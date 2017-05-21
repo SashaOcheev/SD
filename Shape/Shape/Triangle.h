@@ -6,6 +6,7 @@ class CTriangle :
 public:
 	CTriangle(BigInt a, BigInt b, BigInt c);
 
+    std::string Accept(IVisitor &visitor) override;
 	BigInt GetArea() const override;
 	BigInt GetPerimeter() const override;
 

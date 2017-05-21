@@ -2,6 +2,7 @@
 #include "BigInt.h"
 #include <algorithm>
 #include <stdexcept>
+#include <numeric>
 
 BigInt::BigInt(const std::vector<digit> &number)
 {
@@ -331,15 +332,11 @@ bool BigInt::operator>=(const BigInt &number) const
 	return !((*this) < number);
 }
 
-std::ostream &operator<<(std::ostream &os, BigInt &number)
+std::string BigInt::ToString() const
 {
-	size_t i = number.GetSize();
-	while (i)
-	{
-		i--;
-		os << number[i];
-	}
-	return os;
+    return std::accumulate(begin(), end(), std::string(), [](const std::string &str, digit d) {
+        return str + std::to_string(d);
+    });
 }
 
 BigInt sqrt(BigInt number)

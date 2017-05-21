@@ -25,6 +25,12 @@
     <Filter Include="Header Files\ShapeFactory">
       <UniqueIdentifier>{8bc6b84a-1cce-421b-a9f7-e7eca4b202b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Visitor">
+      <UniqueIdentifier>{3144c139-b03a-48d8-b521-9a03de3b2915}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Visitor">
+      <UniqueIdentifier>{dd5a5971-7593-4a55-8480-91fb4ac7b8dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -66,6 +72,12 @@
     <ClInclude Include="BigInt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="IVisitor.h">
+      <Filter>Header Files\Visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="ToStringVisitor.h">
+      <Filter>Header Files\Visitor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -89,9 +101,6 @@
     <ClCompile Include="RectangleFactorySingleton.cpp">
       <Filter>Source Files\ShapeFactory</Filter>
     </ClCompile>
-    <ClCompile Include="AbstractShape.cpp">
-      <Filter>Source Files\Shape</Filter>
-    </ClCompile>
     <ClCompile Include="ShapeSimpleFactory.cpp">
       <Filter>Source Files\ShapeFactory</Filter>
     </ClCompile>
@@ -103,6 +112,9 @@
     </ClCompile>
     <ClCompile Include="BigInt.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ToStringVisitor.cpp">
+      <Filter>Source Files\Visitor</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

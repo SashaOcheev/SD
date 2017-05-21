@@ -2,7 +2,6 @@
 #include "Triangle.h"
 
 CTriangle::CTriangle(BigInt a, BigInt b, BigInt c)
-	: AbstractShape("TRIANGLE")
 {
 	if (a <= 0 || b <= 0 || c <= 0)
 	{
@@ -12,6 +11,11 @@ CTriangle::CTriangle(BigInt a, BigInt b, BigInt c)
 	m_a = a;
 	m_b = b;
 	m_c = c;
+}
+
+std::string CTriangle::Accept(IVisitor & visitor)
+{
+    return visitor.Visit(*this);
 }
 
 BigInt CTriangle::GetArea() const

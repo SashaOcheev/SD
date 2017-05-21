@@ -6,6 +6,7 @@ class CRectangle :
 public:
 	CRectangle(BigInt a, BigInt b);
 	
+    std::string Accept(IVisitor &visitor) override;
 	BigInt GetArea() const override;
 	BigInt GetPerimeter() const override;
 
