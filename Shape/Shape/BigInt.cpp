@@ -334,9 +334,11 @@ bool BigInt::operator>=(const BigInt &number) const
 
 std::string BigInt::ToString() const
 {
-    return std::accumulate(begin(), end(), std::string(), [](const std::string &str, digit d) {
+    auto str = std::accumulate(begin(), end(), std::string(), [](const std::string &str, digit d) {
         return str + std::to_string(d);
     });
+    std::reverse(str.begin(), str.end());
+    return str;
 }
 
 BigInt sqrt(BigInt number)

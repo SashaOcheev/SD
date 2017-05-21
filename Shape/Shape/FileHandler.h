@@ -4,7 +4,6 @@
 #include <vector>
 #include "AbstractShape.h"
 #include <memory>
-#include "IVisitor.h"
 
 class FileHandler
 {

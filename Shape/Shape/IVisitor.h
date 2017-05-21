@@ -1,8 +1,9 @@
 #pragma once
-#include "Circle.h"
-#include "Rectangle.h"
-#include "Triangle.h"
 #include <string>
+
+class CCircle;
+class CTriangle;
+class CRectangle;
 
 class IVisitor
 {

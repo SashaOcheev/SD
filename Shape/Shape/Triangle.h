@@ -1,5 +1,6 @@
 #pragma once
 #include "AbstractShape.h"
+
 class CTriangle :
 	public AbstractShape
 {

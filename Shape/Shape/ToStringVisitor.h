@@ -1,5 +1,9 @@
 #pragma once
 #include "IVisitor.h"
+#include "Rectangle.h"
+#include "Triangle.h"
+#include "Circle.h"
+
 class ToStringVisitor :
     public IVisitor
 {
