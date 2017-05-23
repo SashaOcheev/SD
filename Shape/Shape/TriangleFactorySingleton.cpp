@@ -4,7 +4,7 @@
 
 std::unique_ptr<AbstractShape> TriangleFactorySingleton::CreateShape(BigInt a, BigInt b, BigInt c)
 {
-    return std::make_unique<CTriangle>(a, b, c);
+    return std::unique_ptr<CTriangle>(new CTriangle(a, b, c));
 }
 
 TriangleFactorySingleton &TriangleFactorySingleton::GetInstance()

@@ -4,7 +4,7 @@
 
 std::unique_ptr<AbstractShape> RectangleFactorySingleton::CreateShape(BigInt a, BigInt b)
 {
-    return std::make_unique<CRectangle>(a, b);
+    return std::unique_ptr<CRectangle>(new CRectangle(a, b));
 }
 
 RectangleFactorySingleton &RectangleFactorySingleton::GetInstance()

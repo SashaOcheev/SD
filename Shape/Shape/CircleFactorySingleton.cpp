@@ -4,7 +4,7 @@
 
 std::unique_ptr<AbstractShape> CircleFactorySingleton::CreateShape(BigInt radius)
 {
-    return std::make_unique<CCircle>(radius);
+    return std::unique_ptr<CCircle>(new CCircle(radius));
 }
 
 CircleFactorySingleton &CircleFactorySingleton::GetInstance()
