@@ -60,4 +60,4 @@ private:
 	std::vector<digit> m_number;
 };
 
-BigInt sqrt(BigInt number);
+BigInt sqrt(const BigInt &number);

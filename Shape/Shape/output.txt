@@ -1,3 +1,4 @@
-Triangle's sides must be a positive numbers
+The sum of two sides of the triangle must be greater than a third side
 RECTANGLE P=400 S=10000
-CIRCLE P=300 S=7500
+CIRCLE P=300000000000 S=7500000000000000000000
+TRIANGLE P=120000000000 S=600000000000000000000

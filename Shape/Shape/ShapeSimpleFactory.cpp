@@ -32,9 +32,14 @@ std::unique_ptr<AbstractShape> ShapeSimpleFactory::CreateShape(ShapeType type, s
     }
 }
 
-BigInt ShapeSimpleFactory::GetLength(BigInt x0, BigInt y0, BigInt x1, BigInt y1)
+BigInt ShapeSimpleFactory::GetLength(const BigInt &x0, const BigInt &y0, const BigInt &x1, const BigInt &y1)
 {
-    auto sqrX = (x1 - x0) * (x1 - x0);
-    auto sqrY = (y1 - y0) * (y1 - y0);
+    auto maxX = x1 >= x0 ? x1 : x0;
+    auto minX = x1 >= x0 ? x0 : x1;
+    auto sqrX = (maxX - minX) * (maxX - minX);
+
+    auto maxY = y1 >= y0 ? y1 : y0;
+    auto minY = y1 >= y0 ? y0 : y1;
+    auto sqrY = (maxY - minY) * (maxY - minY);
     return sqrt(sqrX + sqrY);
 }

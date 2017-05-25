@@ -11,6 +11,6 @@ public:
     static std::unique_ptr<AbstractShape> CreateShape(ShapeType type, std::vector<BigInt> params);
 
 private:
-    static BigInt GetLength(BigInt x0, BigInt y0, BigInt x1, BigInt y1);
+    static BigInt GetLength(const BigInt &x0, const BigInt &y0, const BigInt &x1, const BigInt &y1);
 };
 

@@ -348,7 +348,30 @@ std::string BigInt::ToString() const
     return str;
 }
 
-BigInt sqrt(BigInt number)
+BigInt sqrtImpl(const BigInt &leftLimit, const BigInt &rightLimit, const BigInt &number)
+{
+    auto sqrLeftLimit = leftLimit * leftLimit;
+    auto incLeftLimit = leftLimit + 1;
+    auto sqrIncLeftLimit = incLeftLimit * incLeftLimit;
+    if (incLeftLimit <= number && sqrIncLeftLimit > number)
+    {
+        return leftLimit;
+    }
+    auto mediana = (leftLimit + rightLimit) / 2;
+    auto sqrMediana = mediana * mediana;
+    if (sqrMediana == number)
+    {
+        return mediana;
+    }
+    if (sqrMediana > number)
+    {
+        return sqrtImpl(leftLimit, mediana, number);
+    }
+    
+    return sqrtImpl(mediana, rightLimit, number);
+}
+
+BigInt sqrt(const BigInt &number)
 {
     if (number < 0)
     {
@@ -359,26 +382,6 @@ BigInt sqrt(BigInt number)
         return number;
     }
     
-    auto cur = number / 2;
-    auto curInc = cur + 1;
-    auto sqr = cur * 2;
-    auto sqrInc = curInc * 2;
-
-    while (!(sqr <= number && sqrInc >= number))
-    {
-        if (sqr < number)
-        {
-            cur *= 2;
-            sqr = cur * cur;
-            curInc = cur + 1;
-            sqrInc = curInc * curInc;
-        }
-        else
-        {
-            cur /= 2;
-            sqr = cur * cur;
-            curInc = cur + 1;
-            sqrInc = curInc * curInc;
-        }
-    }
+    auto res = sqrtImpl(0, number, number);
+    return res;
 }
