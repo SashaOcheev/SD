@@ -172,7 +172,14 @@ const BigInt BigInt::operator/=(const BigInt & number)
     BigInt remaind;
     for (int i = GetSize() - 1; i > -1; i--)
     {
-        remaind.PushFront((*this)[i]);
+        if (remaind == 0)
+        {
+            remaind = (*this)[i];
+        }
+        else
+        {
+            remaind.PushFront((*this)[i]);
+        }
 
         res.PushFront(0);
         while (remaind >= number)
@@ -347,11 +354,31 @@ BigInt sqrt(BigInt number)
     {
         throw std::domain_error("can not take sqrt of negative");
     }
-    if (number == 0)
+    if (number <= 1)
     {
-        return 0;
+        return number;
     }
-    BigInt sqrt = 0;
-    for (; sqrt * sqrt <= number; ++sqrt) {}
-    return --sqrt;
+    
+    auto cur = number / 2;
+    auto curInc = cur + 1;
+    auto sqr = cur * 2;
+    auto sqrInc = curInc * 2;
+
+    while (!(sqr <= number && sqrInc >= number))
+    {
+        if (sqr < number)
+        {
+            cur *= 2;
+            sqr = cur * cur;
+            curInc = cur + 1;
+            sqrInc = curInc * curInc;
+        }
+        else
+        {
+            cur /= 2;
+            sqr = cur * cur;
+            curInc = cur + 1;
+            sqrInc = curInc * curInc;
+        }
+    }
 }

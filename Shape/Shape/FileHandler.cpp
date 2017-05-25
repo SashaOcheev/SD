@@ -89,8 +89,13 @@ std::vector<BigInt> FileHandler::ReadBigInts(const std::string &str)
         }
         auto end = std::find_if(start, str.end(), [](char ch) { return ch < '0' || ch > '9'; });
         std::string currentString(start, end);
-        BigInts.push_back(std::strtol(currentString.c_str(), nullptr, 10));
+        std::vector<digit> num;
+        for (auto & i : currentString)
+        {
+            num.push_back(i - '0');
+        }
         start = end;
+        BigInts.push_back(BigInt(num));
     }
 
     return BigInts;
